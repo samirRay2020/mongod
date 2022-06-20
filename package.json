@@ -1,0 +1,19 @@
+{
+  "name": "mongodb123",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samirRay2020/mongod.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samirRay2020/mongod/issues"
+  },
+  "homepage": "https://github.com/samirRay2020/mongod#readme"
+}
