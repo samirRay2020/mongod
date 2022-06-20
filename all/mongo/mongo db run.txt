@@ -1,0 +1,14 @@
+1st terminal:
+mongod (//run mongo db server)
+
+2nd terminal:
+npm init
+npm install mongodb
+node index.js (//run index page)
+
+3rd terminal:
+mongo
+show databases (//show all databases)
+use db (//db collection name / database name)
+show collections (//display all table in db)
+db.student.find() (//student-> table name , show all content in table)

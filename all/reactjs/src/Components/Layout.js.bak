@@ -1,0 +1,36 @@
+import { Outlet, Link } from "react-router-dom";
+
+const Layout = () => {
+  return (
+    <>
+      <nav style={{backgroundColor:"yellow",height:"30px",color:"white",textAlign:"center",marginBottom:"2%"}}>
+        <ul style={{display: "flex", justifyContent: "space-between",listStyleType:"none"}}>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/personal">Personal Information</Link>
+          </li>
+          <li>
+            <Link to="/journey">Journey to SSN</Link>
+          </li>
+          <li>
+            <Link to="/interests">Area of Interest</Link>
+          </li>
+          <li>
+            <Link to="/academic">Academic Details</Link>
+          </li>
+          <li>
+            <Link to="/events">Events Organised</Link>
+          </li>
+          <li>
+            <Link to="/feedback">Feedback</Link>
+          </li>
+        </ul> 
+      </nav>
+      <Outlet />
+    </>
+  )
+};
+
+export default Layout;

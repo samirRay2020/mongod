@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
+  <title>Technical Event</title>
+</head>
+
+<body onload="startTime()" id="bod">
+  <header>
+    <div class="container">
+      <a href="academic.html" target="_blank">Academic Details</a>
+      <a href="jssn.html" target="_blank">Journey to SSN</a>
+      <a href="activities.html" target="_blank">Activities/Events</a>
+      <a href="interests.html" target="_blank">Interests</a>
+      <a href="feedback.html" target="_blank">Feedback</a>
+    </div>
+    </header>
+  <h1 style="text-align:center;">Technical Event</h1>
+  <div align="right" style="text-align:right;">
+    <h4>Current time</h2>
+    <div id='txt' ></div>
+  </div>
+  <center>
+  <form action="table.html" method="get">
+    <label for="name">Name: </label>
+    <input type="text" name="Name" id="name" pattern="[A-Za-z\s]+" oninvalid='alert("Invalid Name")' onblur="blurfunc(id)" onfocus="focusfunc(id)" required /><br><br>
+    <label for="college">College Name:  </label>
+    <input type="text" name="College Name" id="college" pattern="[A-Za-z\s]+" oninvalid='alert("Invalid College Name")' required /><br><br>
+    <label for="college_addr">College Address:  </label><br>
+    <textarea id="college_addr" name="College Address" rows="5" cols="30" onselect='alert("Address already entered")' ></textarea><br><br>
+    <label for="pin">PIN Code:  </label>
+    <input type="text" name="PIN Code" id="pin" pattern="[0-9]{6}" required><br><br>
+    <label for="age">Age:  </label>
+    <input type="number" name="Age" id="age" /> <br><br>
+    <label for="dob">Date of Birth:  </label>
+    <input type="date" name="Date of Birth" id="dob" min="1998-01-01" max="2004-12-31" required /> <br><br>
+    <label for="gender">Gender:  </label>
+    <input type="radio" name="gender" id="male" value="male" required/>Male
+    <input type="radio" name="gender" id="female" value="female" />Female
+    <br><br>
+    <label for="dept">Department:  </label>
+    <select name="department" id="dept" onchange="changefunc()" required>
+      <option value="" disabled selected hidden>Select Department</option>
+      <option value="CSE">CSE</option>
+      <option value="Mechanical">Mechanical</option>
+      <option value="IT">IT</option>
+      <option value="ECE">ECE</option>
+      <option value="EEE">EEE</option>
+      <option value="Chemical">Chemical</option>
+      <option value="Civil">Civil</option>
+      <option value="BME">BME</option>
+    </select><br><br>
+    <label for="mob">Mobile Number:  </label>
+    <input type="tel" name="Contact Number" id="mob" pattern="[1-9][0-9]{9}" oninvalid='alert("Invalid Contact Number")' required><br><br>
+    <label for="mail">Email:  </label>
+    <input type="email" name="Email" id="mail" required /><br><br>
+    <label for="skills">Programming Skills</label><br> 
+    <textarea name="Skills" id="skills" ondrop="drop(event)" ondragover="allowDrop(event)" rows="10" cols="30"></textarea>
+    <span class="skillset" style="width:50%">
+    <p>List of Skills</p>
+      <span>
+      <li id="s1" class="skill" draggable="true" ondragstart="drag(event)">Python</li>
+      <li id="s2" class="skill" draggable="true" ondragstart="drag(event)">C++</li>
+      <li id="s3" class="skill" draggable="true" ondragstart="drag(event)">C</li>
+      <li id="s4" class="skill" draggable="true" ondragstart="drag(event)">DSA</li>
+      </span>
+    </span><br><br>
+    <label>Select Hobbies:  </label><br>
+    <input name="Hobbies" type="checkbox" id="hobby1" value="Football">Football
+    <input name="Hobbies" type="checkbox" id="hobby2" value="Cricket">Cricket<br><br>
+    <input name="Hobbies" type="checkbox" id="hobby3" value="Music">Listening to Music
+    <input name="Hobbies" type="checkbox" id="hobby4" value="Coding">Coding/Programming<br><br>
+    <label for="con_let">Consent Letter:  </label>
+    <input type="file" name="Consent Form" id="con_let" accept=".pdf,.doc,.docx" required/> <br><br>
+    <input type="submit" id="sub" />
+    <input type="reset" id="res" />
+  </form>
+    </center>
+</body>
+
+</html>

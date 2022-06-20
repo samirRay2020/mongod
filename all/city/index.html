@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Try1</title>
+        <style>
+            table,tr,td,th{
+                border:2px solid black;
+            }
+        </style>
+        <script>
+            var val=0;
+            function a(){
+                console.log("entered");
+                const xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function(){
+                    if(this.readyState==4 && this.status==200){
+                        a1(this);
+                    }
+                }
+                xhttp.open("GET","t1.xml",true);
+                xhttp.send();
+                
+            }
+            function a1(xml){
+                var a=xml.responseXML;
+                var arr=a.getElementsByTagName("RECORD");
+                var table="<table><tr><th>CITY</th></tr>";
+                for(var i=0; i<arr.length;i++){
+                    var city=arr[i].getElementsByTagName("CITY")[0].childNodes[0].nodeValue;
+                    table+="<tr><td>"+city+"</td></tr>";
+                }
+                document.getElementById("t1").innerHTML=table;
+            }
+
+            function b(){
+                console.log("entered");
+                const xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function(){
+                    if(this.readyState==4 && this.status==200){
+                        nav(this);
+                    }
+                }
+                xhttp.open("GET","t1.xml",true);
+                xhttp.send();
+                
+            }
+            function nav(xml){
+                var a=xml.responseXML;
+                var arr=a.getElementsByTagName("RECORD");
+                var i=val;
+                var table="<table><tr><th>CITY</th><th>MINTEMP</th><th>MAXTEMP</th></tr>";
+                var city=arr[i].getElementsByTagName("CITY")[0].childNodes[0].nodeValue;
+                var mintemp=arr[i].getElementsByTagName("MINTEMP")[0].childNodes[0].nodeValue;
+                var maxtemp=arr[i].getElementsByTagName("MAXTEMP")[0].childNodes[0].nodeValue;
+                table+="<tr style=\"font-size:"+maxtemp+"px;\"><td>"+city+"</td><td>"+mintemp+"</td><td>"+maxtemp+"</td></tr>";
+                
+                document.getElementById("t2").innerHTML=table;
+            }
+
+            function c(){
+                console.log("entered");
+                const xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function(){
+                    if(this.readyState==4 && this.status==200){
+                        pre(this);
+                    }
+                }
+                xhttp.open("GET","t1.xml",true);
+                xhttp.send();
+                
+            }
+            function pre(xml){
+                var a=xml.responseXML;
+                var arr=a.getElementsByTagName("RECORD");
+                var table="<table><tr><th>CITY</th><th>MINTEMP</th><th>MAXTEMP</th></tr>";
+                var i = val-1;
+                    var city=arr[i].getElementsByTagName("CITY")[0].childNodes[0].nodeValue;
+                    var mintemp=arr[i].getElementsByTagName("MINTEMP")[0].childNodes[0].nodeValue;
+                    var maxtemp=arr[i].getElementsByTagName("MAXTEMP")[0].childNodes[0].nodeValue;
+                    table+="<tr style=\"font-size:"+maxtemp+"px;\"><td>"+city+"</td><td>"+mintemp+"</td><td>"+maxtemp+"</td></tr>";
+                
+                document.getElementById("t2").innerHTML=table;
+                val=val-1;
+            }
+
+            function d(){
+                console.log("entered");
+                const xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function(){
+                    if(this.readyState==4 && this.status==200){
+                        anext(this);
+                    }
+                }
+                xhttp.open("GET","t1.xml",true);
+                xhttp.send();
+                
+            }
+            function anext(xml){
+                var a=xml.responseXML;
+                var arr=a.getElementsByTagName("RECORD");
+                var table="<table><tr><th>CITY</th><th>MINTEMP</th><th>MAXTEMP</th></tr>";
+                var i = val+1;
+                    var city=arr[i].getElementsByTagName("CITY")[0].childNodes[0].nodeValue;
+                    var mintemp=arr[i].getElementsByTagName("MINTEMP")[0].childNodes[0].nodeValue;
+                    var maxtemp=arr[i].getElementsByTagName("MAXTEMP")[0].childNodes[0].nodeValue;
+                    table+="<tr style=\"font-size:"+maxtemp+"px;\"><td>"+city+"</td><td>"+mintemp+"</td><td>"+maxtemp+"</td></tr>";
+                
+                document.getElementById("t2").innerHTML=table;
+                val=val+1;
+            }
+        </script>
+    </head>
+    <body>
+        <button type="button" onclick="a()">Display</button>
+        <div id="t1"></div><br><br>
+        <button type="button" onclick="c()">Previous</button>
+        <button type="button" onclick="b()">Navigation</button>
+        <button type="button" onclick="d()">Next</button>
+        <div id="t2"></div><br><br>
+    </body>
+</html>

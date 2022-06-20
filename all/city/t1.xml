@@ -1,0 +1,32 @@
+<RECORDS>
+    <RECORD>
+        <CITY>INDORE</CITY>
+        <MINTEMP>25</MINTEMP>
+        <MAXTEMP>40</MAXTEMP>
+    </RECORD>
+    <RECORD>
+        <CITY>CHENNAI</CITY>
+        <MINTEMP>28</MINTEMP>
+        <MAXTEMP>30</MAXTEMP>
+    </RECORD>
+    <RECORD>
+        <CITY>DELHI</CITY>
+        <MINTEMP>21</MINTEMP>
+        <MAXTEMP>42</MAXTEMP>
+    </RECORD>
+    <RECORD>
+        <CITY>PUNE</CITY>
+        <MINTEMP>22</MINTEMP>
+        <MAXTEMP>41</MAXTEMP>
+    </RECORD>
+    <RECORD>
+        <CITY>AHMEDABAD</CITY>
+        <MINTEMP>26</MINTEMP>
+        <MAXTEMP>44</MAXTEMP>
+    </RECORD>
+    <RECORD>
+        <CITY>SRINAGAR</CITY>
+        <MINTEMP>5</MINTEMP>
+        <MAXTEMP>12</MAXTEMP>
+    </RECORD>
+</RECORDS>

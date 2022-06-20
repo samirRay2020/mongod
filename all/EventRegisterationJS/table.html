@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title>Table</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <script>
+      function loader(){
+	      var url=new URL(window.location.href);
+        console.log(window.location.href);
+	      var Table= document.createElement('table');
+	      for(let [name, value] of url.searchParams) {
+ 		      var row= document.createElement('tr');
+		      var th=document.createElement('th');
+		      var td=document.createElement('td');
+          var text= document.createTextNode(name);
+		      var text1= document.createTextNode(value);
+          td.appendChild(text1);
+		      th.appendChild(text);
+		      row.appendChild(th);
+          row.appendChild(td);
+		      Table.appendChild(row);
+		    }
+		    document.getElementById("maincontent").innerHTML=" ";
+        //Table.style.margin="auto"};
+        document.getElementById("maincontent").appendChild(Table);
+    }
+    </script>
+    </head>
+    <body onload="loader();">
+      <header>
+      <div class="container">
+        <a href="academic.html" target="_blank">Academic Details</a>
+        <a href="jssn.html" target="_blank">Journey to SSN</a>
+        <a href="activities.html" target="_blank">Activities/Events</a>
+        <a href="interests.html" target="_blank">Interests</a>
+        <a href="feedback.html" target="_blank">Feedback</a>
+        <a href="event.html" target="_blank">Tech Event Form</a>
+      </div>
+    </header>
+      <center>
+      <h3 style="color:red"> This is what we recieved!<br>Thank You for filling out the form</h1>
+      <div id="maincontent"></div>
+      </center>
+    
+</body>
+</html>

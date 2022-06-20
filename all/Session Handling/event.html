@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  	<script>
+		function myFunc(){
+			var url=new URL(window.location.href);
+			console.log(window.location.href);
+			var user=url.searchParams.get("username");
+			document.getElementById("user").innerHTML="User: "+user;
+			document.getElementById("u1").value=user;
+		}
+	</script>
+  	<title>Personal Details</title>
+</head>
+
+<body id="bod" onload="myFunc()">
+  	<center>
+		<p id="user"></p>
+	  	<h3>Please provide the following details: </h3>
+	  	<div style="height:650px;width:350px;border: 2px solid black">
+			<form action="personalDetails" method="post" style="margin-top:5%;margin-bottom: 5%;">
+				<input type="hidden" id="u1" name="username" />
+				<label for="name">Name: </label>
+				<input type="text" name="Name" id="name" pattern="[A-Za-z\s]+" oninvalid='alert("Invalid Name")' required /><br><br>
+				<label for="college">College Name:  </label>
+				<input type="text" name="College Name" id="college" pattern="[A-Za-z\s]+" oninvalid='alert("Invalid College Name")' required /><br><br>
+				<label for="college_addr">College Address:  </label><br>
+				<textarea id="college_addr" name="College Address" rows="5" cols="30" ></textarea><br><br>
+				<label for="pin">PIN Code:  </label>
+				<input type="text" name="PIN Code" id="pin" pattern="[0-9]{6}" required><br><br>
+				<label for="age">Age:  </label>
+				<input type="number" name="Age" id="age" /> <br><br>
+				<label for="gender">Gender:  </label>
+				<input type="radio" name="gender" id="male" value="Male" required/>Male
+				<input type="radio" name="gender" id="female" value="Female" />Female
+				<br><br>
+				<label for="dept">Department:  </label>
+				<select name="department" id="dept" required>
+				<option value="" disabled selected hidden>Select Department</option>
+				<option value="CSE">CSE</option>
+				<option value="Mechanical">Mechanical</option>
+				<option value="IT">IT</option>
+				<option value="ECE">ECE</option>
+				<option value="EEE">EEE</option>
+				<option value="Chemical">Chemical</option>
+				<option value="Civil">Civil</option>
+				<option value="BME">BME</option>
+				</select><br><br>
+				<label for="mob">Mobile Number:  </label>
+				<input type="tel" name="Contact Number" id="mob" pattern="[1-9][0-9]{9}" oninvalid='alert("Invalid Contact Number")' required><br><br>
+				<label for="mail">Email:  </label>
+				<input type="email" name="Email" id="mail" required /><br><br>
+				<label>Select Skills:  </label><br>
+				<input name="Skills" type="checkbox" id="s1" value="C">C
+				<input name="Skills" type="checkbox" id="s2" value="Python">Python<br><br>
+				<input name="Skills" type="checkbox" id="s3" value="Java">Java
+				<input name="Skills" type="checkbox" id="s4" value="C++">C++<br><br>
+				
+				<input type="submit" id="sub" />
+				<input type="reset" id="res" />
+			</form>
+		</div>
+  	</center>
+</body>
+
+</html>

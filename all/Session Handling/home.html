@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <script>
+            function myFunc(){
+                var url=new URL(window.location.href);
+                console.log(window.location.href);
+                var user=url.searchParams.get("username");
+                document.getElementById("u").innerHTML=user;
+                document.getElementById("user").value=user;
+                document.getElementById("user1").value=user;
+		    }
+        </script>
+    </head>
+    <body onload="myFunc()">
+        <center>
+            <div>
+                <img src="abc.jpg" style="border-radius:50%;" /><br>
+                <h3>User: <span id="u"></span></h3>
+            </div>
+        </center>
+        <br>
+        <br>
+        <br>
+        <div style="float:left;margin-left:25%;margin-right:10%;width:300px;height:150px;border:2px solid black">
+            <center>
+                <h4>View Your Profile</h4>
+                <form action="display" method="post">
+                    <input type="hidden" id="user" name="username" />
+                    <input type="submit" value="View Profile" />
+                </form>
+            </center>
+        </div>
+        <div style="float:left;width:300px;height:150px;border:2px solid black">
+            <center>
+                <h4>Take Online Programming Skill Test</h4>
+                <form action="test" method="post">
+                    <input type="hidden" id="user1" name="username1" />
+                    <input type="submit" value="Take Test" />
+                </form>
+            </center>
+        </div>
+        <p style="clear:both"></p><br><br>
+        <center>
+            <form action="index.html" >
+                <input type="submit" value="Log-Out" />
+            </form>
+        </center>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script>
+            function func(){
+                var url= new URL(window.location.href)
+                var name=url.searchParams.get("name");
+                var sur=url.searchParams.get("sur")
+                document.getElementById("t1").innerHTML=name+' '+sur
+            }
+        </script>
+    </head>
+    <body onload="func()" style="background-color: aqua;">
+        <h1 style="color:red">Artists and songs</h1>
+        <table style="border:1px solid black">
+            <tr>
+                <th>Artist</th>
+                <th>Song</th>
+            </tr>
+            <tr>
+                <td>Honey Singh</td>
+                <td>Blue Eyes</td>
+            </tr>
+            <tr>
+                <td>Atif Aslam</td>
+                <td>Pehli Dafa</td>
+            </tr>
+        </table>
+        <p id="t1"></p>
+    </body>
+</html>
